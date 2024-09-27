@@ -11,8 +11,8 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 ## Creating a Window
 ```lua
 local Window = Fluent:CreateWindow({
-    Title = "Fluent "..Fluent.Version,
-    SubTitle = "by dawid",
+    Title = "script name here"..Fluent.Version,
+    SubTitle = "subtitle here",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, 
@@ -34,7 +34,7 @@ MinimizeKey = <Enum.KeyCode> - Key to minimize the window.
 ## Creating a Tab
 ```lua
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    Main = Window:AddTab({ Title = "Tab name", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -63,22 +63,22 @@ Duration = <number> - Duration in seconds. Set to nil for no expiration.
 
 ## Creating a Button
 ```lua
-Tabs.Main:AddButton({
+Tabs.Tab name:AddButton({
     Title = "Button",
-    Description = "Very important button",
+    Description = "description",
     Callback = function()
         Window:Dialog({
             Title = "Dialog Title",
-            Content = "This is a dialog.",
+            Content = "Diolog Subtitle",
             Buttons = {
                 {
-                    Title = "Confirm",
+                    Title = "option 1",
                     Callback = function()
                         print("Confirmed the dialog.")
                     end
                 },
                 {
-                    Title = "Cancel",
+                    Title = "option 2",
                     Callback = function()
                         print("Cancelled the dialog.")
                     end
@@ -97,7 +97,7 @@ Callback = <function> - The function executed when the button is clicked.
 
 ## Creating a Toggle
 ```lua
-local Toggle = Tabs.Main:AddToggle("MyToggle", { Title = "Toggle", Default = false })
+local Toggle = Tabs.Main:AddToggle("MyToggle", { Title = "Toggle Name", Default = false })
 Toggle:OnChanged(function()
     print("Toggle changed:", Options.MyToggle.Value)
 end)
@@ -113,7 +113,7 @@ Default = <bool> - The default state of the toggle.
 ```lua
 local Slider = Tabs.Main:AddSlider("Slider", {
     Title = "Slider",
-    Description = "This is a slider",
+    Description = "slider name",
     Default = 2,
     Min = 0,
     Max = 5,
@@ -135,9 +135,10 @@ Rounding = <number> - Rounding precision for the slider.
 ## Creating a Dropdown
 ```lua
 local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
-    Title = "Dropdown",
-    Values = {"one", "two", "three"},
+    Title = "Dropdown Name",
+    Values = {"Value one", "Value two", "Value three"},
     Multi = false,
+-- if Multi = true then dropdown = select multi values
     Default = 1
 })
 
