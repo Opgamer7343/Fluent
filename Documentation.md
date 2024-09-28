@@ -69,7 +69,7 @@ Tabs.Tab name:AddButton({
     Callback = function()
         Window:Dialog({
             Title = "Dialog Title",
-            Content = "Diolog Subtitle",
+            Content = "Dialog Subtitle",
             Buttons = {
                 {
                     Title = "option 1",
