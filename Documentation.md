@@ -19,7 +19,7 @@ local Window = Fluent:CreateWindow({
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
-
+```
 --[[
 Title = <string> - The name of the window.
 SubTitle = <string> - The subtitle displayed.
@@ -29,7 +29,6 @@ Acrylic = <bool> - Enables or disables window blur.
 Theme = <string> - The theme of the window ("Dark" or "Light").
 MinimizeKey = <Enum.KeyCode> - Key to minimize the window.
 ]]
-```
 
 ## Creating a Tab
 ```lua
@@ -37,12 +36,11 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Tab name", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
-
+```
 --[[
 Title = <string> - The title of the tab.
 Icon = <string> - The icon for the tab (optional).
 ]]
-```
 
 ## Notifying the User
 ```lua
@@ -52,14 +50,13 @@ Fluent:Notify({
     SubContent = "Optional subcontent", 
     Duration = 5
 })
-
+```
 --[[
 Title = <string> - The title of the notification.
 Content = <string> - The main content of the notification.
 SubContent = <string> - Optional subcontent of the notification.
 Duration = <number> - Duration in seconds. Set to nil for no expiration.
 ]]
-```
 
 ## Creating a Button
 ```lua
@@ -87,13 +84,13 @@ Tabs.Tab name:AddButton({
         })
     end
 })
+```
 
 --[[
 Title = <string> - The name of the button.
 Description = <string> - Description for the button.
 Callback = <function> - The function executed when the button is clicked.
 ]]
-```
 
 ## Creating a Toggle
 ```lua
@@ -102,12 +99,11 @@ Toggle:OnChanged(function()
     print("Toggle changed:", Options.MyToggle.Value)
 end)
 Options.MyToggle:SetValue(false)
-
+```
 --[[
 Title = <string> - The name of the toggle.
 Default = <bool> - The default state of the toggle.
 ]]
-```
 
 ## Creating a Slider
 ```lua
@@ -123,14 +119,14 @@ local Slider = Tabs.Main:AddSlider("Slider", {
     end
 })
 Slider:SetValue(3)
-
+```
 --[[
 Title = <string> - The name of the slider.
 Min = <number> - The minimum value of the slider.
 Max = <number> - The maximum value of the slider.
 Rounding = <number> - Rounding precision for the slider.
 ]]
-```
+
 
 ## Creating a Dropdown
 ```lua
@@ -146,14 +142,13 @@ Dropdown:SetValue("two")
 Dropdown:OnChanged(function(Value)
     print("Dropdown changed:", Value)
 end)
-
+```
 --[[
 Title = <string> - The name of the dropdown.
 Values = <table> - The list of values.
 Multi = <bool> - Allows multiple selections if true.
 Default = <string> - The default selected value.
 ]]
-```
 
 ## Using the SaveManager and InterfaceManager
 ```lua
@@ -172,7 +167,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 SaveManager:LoadAutoloadConfig()
 ```
 
-## idk
+## idk notification
 ```lua
 Window:SelectTab(1)
 
